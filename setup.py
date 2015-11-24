@@ -100,7 +100,7 @@ setup(
     data_files = data_files,
     package_dir = { '': 'src' },
     install_requires=[
-                     'janitoo == %s'%janitoo_version,
+                     'janitoo_admin >= %s'%"0.0.6",
                      'APScheduler == 3.0.3',
                     ],
     entry_points = janitoo_entry_points,

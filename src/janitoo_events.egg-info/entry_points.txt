@@ -1,6 +1,6 @@
-[janitoo.components]
-events.cron = janitoo_events.component:make_component
-
 [janitoo.threads]
 events = janitoo_events.thread:make_thread
+
+[janitoo.components]
+events.cron = janitoo_events.component:make_component
 
