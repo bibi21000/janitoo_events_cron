@@ -55,15 +55,9 @@ class TestEventsSerser(JNTTServer, JNTTServerCommon):
     server_class = JNTServer
     server_conf = "tests/data/janitoo_events.conf"
 
-    def test_110_request_system_values(self):
-        self.start()
-        nodeHADD=HADD%(30,0)
-        self.assertHeartbeatNode(hadd=nodeHADD)
-        self.assertNodeRequest(cmd_class=COMMAND_DISCOVERY, uuid='request_info_nodes', node_hadd=nodeHADD, client_hadd=HADD%(9999,0))
-        self.stop()
+    hadds = [HADD%(30,0), HADD%(30,1), HADD%(30,2), HADD%(30,3),
+            ]
 
-class TestEventsThread(JNTTThread, JNTTThreadCommon):
-    """Test the Events thread
-    """
-    thread_name = "events"
-
+    #~ def test_040_server_start_no_error_in_log(self):
+        #~ self.onlyRasperryTest()
+        #~ JNTTServerCommon.test_040_server_start_no_error_in_log(self)
