@@ -1,7 +1,9 @@
 # -*- coding: utf-8 -*-
+"""The 1-wire Bus
+It handle all communications to the onewire bus
 
-"""Unittests for Janitoo-Samsung Server.
 """
+
 __license__ = """
     This file is part of Janitoo.
 
@@ -23,35 +25,37 @@ __author__ = 'Sébastien GALLET aka bibi21000'
 __email__ = 'bibi21000@gmail.com'
 __copyright__ = "Copyright © 2013-2014-2015 Sébastien GALLET aka bibi21000"
 
-import sys, os
-import time, datetime
-import unittest
-import threading
+# Set default logging handler to avoid "No handler found" warnings.
 import logging
-from pkg_resources import iter_entry_points
-
-from janitoo_nosetests.component import JNTTComponent, JNTTComponentCommon
-
-from janitoo.utils import json_dumps, json_loads
-from janitoo.utils import HADD_SEP, HADD
-from janitoo.utils import TOPIC_HEARTBEAT
-from janitoo.utils import TOPIC_NODES, TOPIC_NODES_REPLY, TOPIC_NODES_REQUEST
-from janitoo.utils import TOPIC_BROADCAST_REPLY, TOPIC_BROADCAST_REQUEST
-from janitoo.utils import TOPIC_VALUES_USER, TOPIC_VALUES_CONFIG, TOPIC_VALUES_SYSTEM, TOPIC_VALUES_BASIC
-
+logger = logging.getLogger(__name__)
+import os
+import time
+from janitoo.bus import JNTBus
+from janitoo.value import JNTValue, value_config_poll
+from janitoo.node import JNTNode
+from janitoo.component import JNTComponent
+from janitoo_events.thread import OID
 
 ##############################################################
 #Check that we are in sync with the official command classes
 #Must be implemented for non-regression
 from janitoo.classes import COMMAND_DESC
 
-COMMAND_DISCOVERY = 0x5000
+COMMAND_METER = 0x0032
+COMMAND_CONFIGURATION = 0x0070
 
-assert(COMMAND_DESC[COMMAND_DISCOVERY] == 'COMMAND_DISCOVERY')
+assert(COMMAND_DESC[COMMAND_METER] == 'COMMAND_METER')
+assert(COMMAND_DESC[COMMAND_CONFIGURATION] == 'COMMAND_CONFIGURATION')
 ##############################################################
 
-class TestEventsWeekly(JNTTComponent, JNTTComponentCommon):
-    """Test the events.weekly component
-    """
-    component_name = 'events.weekly'
+def make_weekly(**kwargs):
+    return Weekly(**kwargs)
 
+class Weekly(JNTComponent):
+    """ Provides """
+
+    def __init__(self, bus=None, addr=None, lock=None, unit="°C", **kwargs):
+        """ Constructor.
+
+        """
+        JNTComponent.__init__(self, '%s.weekly'%OID, bus=bus, addr=addr, name="Weekly cron", **kwargs)
