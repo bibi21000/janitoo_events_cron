@@ -25,11 +25,12 @@ __author__ = 'Sébastien GALLET aka bibi21000'
 __email__ = 'bibi21000@gmail.com'
 __copyright__ = "Copyright © 2013-2014-2015-2016 Sébastien GALLET aka bibi21000"
 
-# Set default logging handler to avoid "No handler found" warnings.
-import logging
-logger = logging.getLogger(__name__)
 import os
 import time
+
+import logging
+logger = logging.getLogger(__name__)
+
 from janitoo.bus import JNTBus
 from janitoo.value import JNTValue, value_config_poll
 from janitoo.node import JNTNode
