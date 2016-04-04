@@ -95,6 +95,9 @@ setup(
         "janitoo.components": [
             "events.weekly = janitoo_events_cron.component:make_weekly",
         ],
+        "events.extensions": [
+            "cron = janitoo_events_cron.bus:extend",
+        ],
     },
     dependency_links = [
       'https://github.com/bibi21000/janitoo/archive/master.zip#egg=janitoo',
