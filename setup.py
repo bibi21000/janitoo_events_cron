@@ -105,3 +105,4 @@ setup(
       'https://github.com/bibi21000/janitoo_events/archive/master.zip#egg=janitoo_events',
     ],
 )
+
