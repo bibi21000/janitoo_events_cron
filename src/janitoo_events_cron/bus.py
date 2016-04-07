@@ -67,8 +67,9 @@ def extend( self ):
     self._events_crons_start = self.start
     def start(mqttc, trigger_thread_reload_cb=None):
         """Start the bus"""
-        logger.debug("[%s] - Start the bus", self.__class__.__name__)
+        logger.debug("[%s] - Start the bus %s", self.__class__.__name__, self.oid )
         self._events_crons = BackgroundScheduler()
+        self._events_crons.start()
         return self._events_crons_start(mqttc, trigger_thread_reload_cb=trigger_thread_reload_cb)
     self.start = start
 
