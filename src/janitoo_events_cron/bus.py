@@ -60,7 +60,6 @@ assert(COMMAND_DESC[COMMAND_CONFIGURATION] == 'COMMAND_CONFIGURATION')
 ##############################################################
 
 def extend( self ):
-    #~ pass
 
     self._events_crons = None
 
