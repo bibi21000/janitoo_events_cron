@@ -54,7 +54,6 @@ class TestEventsSerser(JNTTServer, JNTTServerCommon):
     broker_password = 'toto'
     server_class = JNTServer
     server_conf = "tests/data/janitoo_events_cron.conf"
-
     hadds = [HADD%(30,0), HADD%(30,1), HADD%(30,2), HADD%(30,3),
             ]
 
