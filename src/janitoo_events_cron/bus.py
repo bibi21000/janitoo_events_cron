@@ -61,24 +61,27 @@ assert(COMMAND_DESC[COMMAND_CONFIGURATION] == 'COMMAND_CONFIGURATION')
 
 def extend( self ):
 
-    self._events_crons = None
+    self.events_crons = None
+    self.export_attrs('events_crons', self.events_crons)
 
     self._events_crons_start = self.start
     def start(mqttc, trigger_thread_reload_cb=None):
         """Start the bus"""
         logger.debug("[%s] - Start the bus %s", self.__class__.__name__, self.oid )
-        self._events_crons = BackgroundScheduler()
-        self._events_crons.start()
+        self.events_crons = BackgroundScheduler()
+        self.events_crons.start()
+        self.update_attrs('events_crons', self.events_crons)
         return self._events_crons_start(mqttc, trigger_thread_reload_cb=trigger_thread_reload_cb)
     self.start = start
 
     self._events_crons_stop = self.stop
     def stop():
         """Stop the bus"""
-        if self._events_crons is not None:
-            self._events_crons.shutdown()
+        if self.events_crons is not None:
+            self.events_crons.shutdown()
         ret = self._events_crons_stop()
-        self._events_crons = None
+        self.events_crons = None
+        self.update_attrs('events_crons', self.events_crons)
         return ret
     self.stop=stop
 
