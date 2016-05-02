@@ -59,4 +59,10 @@ class Weekly(JNTComponent):
         """ Constructor.
 
         """
-        JNTComponent.__init__(self, '%s.weekly'%OID, bus=bus, addr=addr, name="Weekly cron", **kwargs)
+        JNTComponent.__init__(self,
+            oid = kwargs.pop('oid', '%s.weekly'%OID),
+            bus = bus,
+            addr = addr,
+            name = kwargs.pop('name', "Weekly event"),
+            product_name = kwargs.pop('product_name', "Weekly event"),
+            **kwargs)
