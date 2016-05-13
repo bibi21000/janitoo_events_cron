@@ -1,0 +1,30 @@
+janitoo_events_cron package
+===========================
+
+Submodules
+----------
+
+janitoo_events_cron.bus module
+------------------------------
+
+.. automodule:: janitoo_events_cron.bus
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+janitoo_events_cron.component module
+------------------------------------
+
+.. automodule:: janitoo_events_cron.component
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+
+Module contents
+---------------
+
+.. automodule:: janitoo_events_cron
+    :members:
+    :undoc-members:
+    :show-inheritance:

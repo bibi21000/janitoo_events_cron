@@ -1,0 +1,18 @@
+janitoo_events_cron package
+===========================
+
+Show janitoo's extensions.
+
+Core extensions
+---------------
+
+Components
+^^^^^^^^^^
+
+ - events.weekly (janitoo_events_cron.component:make_weekly)
+
+Bus extensions 
+^^^^^^^^^^^^^^^
+
+ - ('events', 'cron') (janitoo_events_cron.bus:extend)
+
