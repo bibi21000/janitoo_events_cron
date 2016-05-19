@@ -123,6 +123,12 @@
 <p id='n60' class='pln'><a href='#n60'>60</a></p>
 <p id='n61' class='pln'><a href='#n61'>61</a></p>
 <p id='n62' class='stm run hide_run'><a href='#n62'>62</a></p>
+<p id='n63' class='pln'><a href='#n63'>63</a></p>
+<p id='n64' class='pln'><a href='#n64'>64</a></p>
+<p id='n65' class='pln'><a href='#n65'>65</a></p>
+<p id='n66' class='pln'><a href='#n66'>66</a></p>
+<p id='n67' class='pln'><a href='#n67'>67</a></p>
+<p id='n68' class='pln'><a href='#n68'>68</a></p>
                 
             </td>
             <td class='text' valign='top'>
@@ -187,7 +193,13 @@
 <p id='t59' class='pln'>&nbsp; &nbsp; &nbsp; &nbsp; <span class='str'>&quot;&quot;&quot; Constructor.</span><span class='strut'>&nbsp;</span></p>
 <p id='t60' class='pln'><span class='strut'>&nbsp;</span></p>
 <p id='t61' class='pln'><span class='str'>&nbsp; &nbsp; &nbsp; &nbsp; &quot;&quot;&quot;</span><span class='strut'>&nbsp;</span></p>
-<p id='t62' class='stm run hide_run'>&nbsp; &nbsp; &nbsp; &nbsp; <span class='nam'>JNTComponent</span><span class='op'>.</span><span class='nam'>__init__</span><span class='op'>(</span><span class='nam'>self</span><span class='op'>,</span> <span class='str'>&#39;%s.weekly&#39;</span><span class='op'>%</span><span class='nam'>OID</span><span class='op'>,</span> <span class='nam'>bus</span><span class='op'>=</span><span class='nam'>bus</span><span class='op'>,</span> <span class='nam'>addr</span><span class='op'>=</span><span class='nam'>addr</span><span class='op'>,</span> <span class='nam'>name</span><span class='op'>=</span><span class='str'>&quot;Weekly cron&quot;</span><span class='op'>,</span> <span class='op'>**</span><span class='nam'>kwargs</span><span class='op'>)</span><span class='strut'>&nbsp;</span></p>
+<p id='t62' class='stm run hide_run'>&nbsp; &nbsp; &nbsp; &nbsp; <span class='nam'>JNTComponent</span><span class='op'>.</span><span class='nam'>__init__</span><span class='op'>(</span><span class='nam'>self</span><span class='op'>,</span><span class='strut'>&nbsp;</span></p>
+<p id='t63' class='pln'>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class='nam'>oid</span> <span class='op'>=</span> <span class='nam'>kwargs</span><span class='op'>.</span><span class='nam'>pop</span><span class='op'>(</span><span class='str'>&#39;oid&#39;</span><span class='op'>,</span> <span class='str'>&#39;%s.weekly&#39;</span><span class='op'>%</span><span class='nam'>OID</span><span class='op'>)</span><span class='op'>,</span><span class='strut'>&nbsp;</span></p>
+<p id='t64' class='pln'>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class='nam'>bus</span> <span class='op'>=</span> <span class='nam'>bus</span><span class='op'>,</span><span class='strut'>&nbsp;</span></p>
+<p id='t65' class='pln'>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class='nam'>addr</span> <span class='op'>=</span> <span class='nam'>addr</span><span class='op'>,</span><span class='strut'>&nbsp;</span></p>
+<p id='t66' class='pln'>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class='nam'>name</span> <span class='op'>=</span> <span class='nam'>kwargs</span><span class='op'>.</span><span class='nam'>pop</span><span class='op'>(</span><span class='str'>&#39;name&#39;</span><span class='op'>,</span> <span class='str'>&quot;Weekly event&quot;</span><span class='op'>)</span><span class='op'>,</span><span class='strut'>&nbsp;</span></p>
+<p id='t67' class='pln'>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class='nam'>product_name</span> <span class='op'>=</span> <span class='nam'>kwargs</span><span class='op'>.</span><span class='nam'>pop</span><span class='op'>(</span><span class='str'>&#39;product_name&#39;</span><span class='op'>,</span> <span class='str'>&quot;Weekly event&quot;</span><span class='op'>)</span><span class='op'>,</span><span class='strut'>&nbsp;</span></p>
+<p id='t68' class='pln'>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class='op'>**</span><span class='nam'>kwargs</span><span class='op'>)</span><span class='strut'>&nbsp;</span></p>
                 
             </td>
         </tr>
