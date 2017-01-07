@@ -90,7 +90,7 @@ setup(
                      'janitoo_factory',
                      'janitoo_events',
                      'funcsigs==1.0.1',
-                     'APScheduler',
+                     'APScheduler==3.2.0',
                     ],
     entry_points = {
         "janitoo.components": [
